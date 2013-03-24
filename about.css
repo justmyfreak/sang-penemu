@@ -1,0 +1,10 @@
+body {
+	background: url(newback.gif);
+	font-size: 20px;	
+	}
+
+a {
+	color: #00CCFF;
+	text-decoration: none;
+	border-bottom: dotted #222;	
+	}

@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta name="viewport" content="width=320; user-scalable=no" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="penemu.css">
+    <!--  <link rel="stylesheet" href="jquery.mobile/jquery.mobile-1.1.0.css">-->
+    <title>Sang Penemu</title>
+
+	<script type="text/javascript" charset="utf-8" src="list.min.js"></script>
+	  <script type="text/javascript" charset="utf-8" src="cordova-1.9.0.js"></script>
+	  <script type="text/javascript" charset="utf-8" src="share.js" ></script>
+	<script type="text/javascript" src="jquery.mobile/jquery-1.8.3.js"></script>
+	<!--  <script type="text/javascript" src="jquery.mobile/jquery.mobile-1.1.0.js"></script>-->
+	<script type="text/javascript" src="jquery.mobile/jquery-noclickdelay.js"></script>
+	  <script type="text/javascript" charset="utf-8">
+      
+        var menuOpen = false;
+		var menuDiv = "";
+
+	function init() {
+		document.addEventListener("deviceready", startup, false);
+	}
+
+	function startup() {
+		console.log("Business time...");
+		menuDiv = document.querySelector("#menu");
+		document.addEventListener("menubutton", doMenu, false);
+		document.addEventListener("backbutton", doClose, false);
+	}
+
+	function doMenu() {
+		console.log("The menu was clicked...");
+		if(menuOpen) {
+			console.log("close the menu");
+			menuDiv.style.display="none";
+			menuOpen = false;
+		} else {
+			console.log("open the menu");
+			menuDiv.style.display="block";
+			menuOpen = true;
+		}
+	}
+	
+	function exitApp(buttonIndex) {
+		if (buttonIndex == 1) {
+			navigator.app.exitApp();
+		}
+		else {
+			window.close();
+		}
+	}
+	
+	function showExitAlert() {
+		navigator.notification.confirm(
+			'Keluar dari Aplikasi ?',
+			exitApp,
+			'Sang Penemu',
+			'Ok,Cancel'
+		);
+	}
+	
+	function doClose() {
+		console.log("The menu was clicked...");
+		if(menuOpen) {
+			console.log("close the menu");
+			menuDiv.style.display="none";
+			menuOpen = false;
+		}
+		else {
+			console.log("Exit App");
+			showExitAlert();
+		}
+	}
+</script>  
+<script type="text/javascript" src="sharing.js"></script>
+<script type="text/javascript" src="js/swipe.js"></script>
+<style>
+	div#menu {
+		display:none;
+		position: fixed !important;
+	}
+</style>
+  </head>
+  <body onload="init();" id="stage" class="theme">
+    	
+				<div id="kepala">
+					<div id="branding"><img src="images/penemu64.png"></div>
+				</div>
+				
+				<div id="menuku">
+					<center>
+					<p>
+						<a class="a_demo_five button" href="techno.html">
+                            Mulai Belajar
+                    	</a>
+                    </p>
+                    </center>
+                    <center>
+					<p>
+						<a class="a_demo_five kuis button" href="slickquiz/index.html">
+                            Take Quiz !
+                    	</a>
+                    </p>
+                    </center>
+                    <br />
+                    <center>
+					<p>
+						<a class="a_demo_one button" href="about.html">
+                            About This App
+                    	</a>
+                    </p>
+                    </center>
+				</div>
+				
+				<!--  
+				<div id='slider3' class='swipe'>
+ 				 <ul>
+    				<li style='display:block'><div><a href="about.html" class="button"><img src="images/about-11.png" height="220px" alt="" ></a></div></li>
+    				<li style='display:block'><div><a href="techno.html" class="button"><img src="images/learn-11.png" height="220px" alt="" ></a></div></li>
+    				<li style='display:block'><div><a href="slickquiz/index.html" class="button"><img src="images/kuis-11.png" height="220px" alt="" ></a></div></li>
+    				<li style='display:block'><div><a href="#" class="button"><img src="images/games.png" height="200px" alt="" ></a></div></li>
+  				 </ul>
+  				 
+  				 <script>
+					var slider3 = new Swipe(document.getElementById('slider3'), {
+						speed: 300,
+						auto: 3000
+					});
+				</script>
+			    </div>
+			    -->
+				<footer id="footer">
+					<div id="footer-line"></div>
+					<center>Sang Penemu App</center><br />
+				</footer>
+		
+
+
+
+  </body>
+</html>

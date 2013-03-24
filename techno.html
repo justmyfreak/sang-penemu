@@ -1,0 +1,1379 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta name="viewport" content="width=320; user-scalable=no" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="jquery.mobile/jquery.mobile-1.1.0.css">
+    
+    <link rel="stylesheet" href="css/styles.css" type="text/css" />
+	<link rel="stylesheet" href="css/jquery-tool.css" type="text/css" />
+    <title>Sang Penemu</title>
+	<script type="text/javascript" charset="utf-8" src="cordova-1.9.0.js"></script>
+	<script type="text/javascript" charset="utf-8" src="share.js" ></script>
+	<script type="text/javascript" src="jquery.mobile/jquery-1.8.3.js"></script>
+	<script type="text/javascript" src="jquery.mobile/jquery.mobile-1.1.0.js"></script>
+	<script type="text/javascript" charset="utf-8">
+      
+        var menuOpen = false;
+	var menuDiv = "";
+
+	function init() {
+		document.addEventListener("deviceready", startup, false);
+	}
+
+	function startup() {
+		console.log("Business time...");
+		menuDiv = document.querySelector("#menu");
+		document.addEventListener("menubutton", doMenu, false);
+		document.addEventListener("backbutton", doClose, false);
+	}
+
+	function doMenu() {
+		console.log("The menu was clicked...");
+		if(menuOpen) {
+			console.log("close the menu");
+			menuDiv.style.display="none";
+			menuOpen = false;
+		} else {
+			console.log("open the menu");
+			menuDiv.style.display="block";
+			menuOpen = true;
+		}
+	}
+	
+	function doClose() {
+		console.log("The menu was clicked...");
+		if(menuOpen) {
+			console.log("close the menu");
+			menuDiv.style.display="none";
+			menuOpen = false;
+		}
+		else {
+			console.log("back hystory");
+			window.location.replace('index.html');
+		}
+	}
+</script>
+<script type="text/javascript" src="js/jquery.tools.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>  
+<script type="text/javascript" src="sharing.js"></script>
+<style>
+	div#menu {
+		display:none;
+		position: fixed !important;
+	}
+</style>
+  </head>
+  <body onload="init();" id="stage" class="theme">
+  	<center><h1>TECHNO</h1></center>
+  	<br />
+  	<br />
+  	<br />
+    <div id="example-list" data-role="page" data-theme="b" data-content-theme="c">
+
+		<div data-role="header" id="headerku" data-theme="a">
+			<h3>Sang Penemu</h3>
+			
+			<!--<a id="homeicon" href="index.html" rel="external" ><img src="gohome.png" height="20px"></a>-->
+		</div>
+		<!-- <div id="search">
+			<center><input type="text" class="search" placeholder="search"></center>
+		</div>
+		-->
+
+		<div id="kontenku">	
+			<ul class="list" data-role="listview" data-corners="false" data-shadow="false" data-iconshadow="true">
+       			<li>
+					<a href="#detail-laptop" data-transition="none">
+           				<img src="images/laptop.png">
+           				<h3>Laptop</h3>
+           				<p>Adam Osborne</p>
+					</a>
+       			</li>
+       			<li>
+           			<a href="#detail-lcd" data-transition="none">
+           				<img src="images/lcd.png">
+           				<h3>LCD</h3>
+           				<p>Pierre Gilles de Gennes</p>
+					</a>
+       			</li>
+       			<li>
+           			<a href="#detail-ac" data-transition="none">
+           				<img src="images/ac.png">
+           				<h3>Air Conditioner</h3>
+           				<p>Willis Carrier</p>
+           			</a>
+       			</li>
+       			<li>
+           			<a href="#detail-atm" data-transition="none">
+           				<img src="images/atm.png">
+           				<h3>Mesin ATM</h3>
+           				<p>John Shepherd Baron</p>
+           			</a>
+       			</li>
+       			<li>
+           			<a href="#detail-remote" data-transition="none">
+           				<img src="images/remote.png">
+           				<h3>Remote Control</h3>
+           				<p>Robert Adler</p>
+           			</a>
+       			</li>
+       			<li>
+           			<a href="#detail-cd" data-transition="none">
+           				<img src="images/compactdisc.png">
+						<h3>Compact Disc</h3>
+						<p>James T. Russel</p>
+           			</a>	
+       			</li>
+       			<li>
+           			<a href="#detail-komputer" data-transition="none">
+           				<img src="images/computer.png">
+						<h3>Komputer</h3>
+						<p>Howard Hathaway Aiken</p>
+					</a>
+       			</li>
+       			<li>
+           			<a href="#detail-fotocopy" data-transition="none">
+           				<img src="images/copy.png">
+						<h3>Mesin Fotokopi</h3>
+						<p>Chester F. Carlson</p>
+					</a>
+       			</li>
+       			<li>
+           			<a href="#detail-radio" data-transition="none">
+           				<img src="images/radio.png">
+						<h3>Radio</h3>
+						<p>Guglielmo Marconi</p>
+					</a>
+       			</li>
+       			<li>	
+           			<a href="#detail-roket" data-transition="none">
+           				<img src="images/rocket.png">
+						<h3>Roket</h3>
+						<p>Robert Goddard</p>
+					</a>
+       			</li>
+       			<li>
+           			<a href="#detail-lampulalulintas" data-transition="none">
+           				<img src="images/trafficlight.png">
+						<h3>Lampu Lalu Lintas</h3>
+						<p>Garret Augustus Morgan</p>
+					</a>
+       			</li>
+       			<li>
+           			<a href="#detail-tv" data-transition="none">
+           				<img src="images/tv.png">
+						<h3>Televisi</h3>
+						<p>John Logie Baird</p>
+					</a>
+       			</li>
+       			<li>
+           			<a href="#detail-bolam" data-transition="none">
+           				<img src="images/bohlam.png">
+						<h3>Bola Lampu</h3>
+						<p>Thomas Alva Edison</p>
+					</a>
+       			</li>
+       			<li>
+           			<a href="#detail-kamera" data-transition="none">
+           				<img src="images/camera.png">
+						<h3>Kamera</h3>
+						<p>George Eastman</p>
+					</a>
+       			</li>
+       			<li>
+           			<a href="#detail-diesel" data-transition="none">
+           				<img src="images/diesel.png">
+						<h3>Mesin Diesel</h3>
+						<p>Rudolf Diesel</p>
+					</a>
+       			</li>
+       			<li>
+           			<a href="#detail-helikopter" data-transition="none">
+           				<img src="images/helikopter.png">
+						<h3>Helikopter</h3>
+						<p>Jan Bahyl</p>
+					</a>
+       			</li>
+       			<li>
+           			<a href="#detail-kalkulator" data-transition="none">
+           				<img src="images/kalkulator.png">
+						<h3>Kalkulator</h3>
+						<p>Blaise Pascal</p>
+					</a>
+       			</li>
+       			<li>
+           			<a href="#detail-pesawat" data-transition="none">
+           				<img src="images/pesawat.png">
+						<h3>Pesawat</h3>
+						<p>Wilbur dan Orville</p>
+           			</a>
+       			</li>
+       			<li>
+           			<a href="#detail-telepon" data-transition="none">
+           				<img src="images/telepon.png">
+						<h3>Telepon</h3>
+						<p>Alexander Graham Bell</p>
+					</a>
+       			</li>
+       			<li>
+           			<a href="#detail-traktor" data-transition="none">
+           				<img src="images/traktor.png">
+						<h3>Traktor</h3>
+						<p>John Froelich</p>
+					</a>
+       			</li>
+       			<li>
+           			<a href="#detail-xray" data-transition="none">
+           				<img src="images/xray.png">
+						<h3>Sinar X-Ray</h3>
+						<p>Wilhelm Conrad Rontgen</p>
+					</a>
+       			</li>
+       		</ul>		
+		</div><!-- /content -->
+
+</div>
+	<div id="detail-laptop" class="detail" data-role="page" data-theme="c" data-content-theme="c">
+		<div data-role="header" data-theme="c">
+			<h3>Laptop</h3>
+			<a data-icon="arrow-l" data-corners="false" href="#example-list" data-transition="none">Kembali</a>
+		</div>
+		<ul id="expmenu-freebie">
+			<li>
+				<ul class="expmenu">
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/user.png);">Overview</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:block">
+							<li>
+   								<center><img src="penemu/laptop-osborn.jpg" height="120px"></center>
+   								<center><h1>Adam Osborne</h1></center>
+   								<center><p>dilahirkan di Thailand tahun 1939. Sejak kecil ia sangat tekun belajar</p></center>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/campus.png);">Pendidikan</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:none">
+							<li>
+								<center>
+								Universitas Birmingham <br />
+								Universitas Delaware
+								</center>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/messages.png);">Story</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:none">
+							<li>
+							<p>
+							Sejak kecil, ia dikenal tekun belajar. Osborne meraih gelar sarjana muda di bidang teknik kimia dari Universitas Birmingham pada tahun 1961. Kemudian, ia pergi ke Amerika untuk melanjutkan studi di Universitas Delaware dan meraih gelar Ph.D dalam bidang yang sama. Setelah kuliah, ia bekerja di perusahaan Shell Oil, kemudian keluar dan memilih menjadi penulis profesional bidang komputer. Ketekunannya berbuah manis. Ia berhasil menemukan laptop pada April 1981. 
+							<br /> <br />Dengan ditemukannya laptop. Mahasiswa, dosen, maupun pengusaha dapat dengan mudah melakukan aktifitas yang berkaitan dengan dunia kerja.
+							</p>
+							<center><a href="#" onclick="sharelaptop();" ><img src="sharethis.png"></a></center>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	
+	<div id="detail-lcd" class="detail" data-role="page" data-theme="c" data-content-theme="c">
+		<div data-role="header" data-theme="c">
+			<h3>LCD</h3>
+			<a data-icon="arrow-l" data-corners="false" href="#example-list" data-transition="none">Kembali</a>
+		</div>
+		<ul id="expmenu-freebie">
+			<li>
+				<ul class="expmenu">
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/user.png);">Overview</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:block">
+							<li>
+   								<center><img src="penemu/lcd-pierre.jpg" height="120px"></center>
+   								<center><h1>Pierre Gilles de Gennes</h1></center>
+   								<center><p>lahir di Paris, 24 Oktober 1932.</p></center>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/campus.png);">Pendidikan</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:none">
+							<li>
+								<center>
+								ESPCI, Collège de France, Paris-Sud 11 University
+								</center>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/messages.png);">Story</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:none">
+							<li>
+							<p class="sejarah">
+								Setelah kuliah, ia bekerja dibeberapa tempat . terakhir ia bekerja di sebuah perusahaan supraconductor yang berhubungan dengan liquid crystal. Di tempat itulah ia menemukan alat LCD atau display layar dengan teknologi liquid crystal. Atas prestasinya tersebut, ia mendapat Nobel Fisika pada tahun 1991.
+								<br /> <br />LCD sekarang diaplikasikan pada banyak alat elektronik. Seperti Layar Komputer, Layar Handphone dan lain-lain.
+							</p>
+							<center><a href="#" onclick="sharelcd();" ><img src="sharethis.png"></a></center>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	
+	<div id="detail-ac" class="detail" data-role="page" data-theme="c" data-content-theme="c">
+		<div data-role="header" data-theme="c">
+			<h3>AC</h3>
+			<a data-icon="arrow-l" data-corners="false" href="#example-list" data-transition="none">Kembali</a>
+		</div>
+		<ul id="expmenu-freebie">
+			<li>
+				<ul class="expmenu">
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/user.png);">Overview</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:block">
+							<li>
+   								<center><img src="penemu/ac-willis.jpg" height="120px"></center>
+   								<center><h1>Willis Carrier</h1></center>
+   								<center><p>(1876-1950)</p></center>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/campus.png);">Pendidikan</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:none">
+							<li>
+								<center>
+								Universitas Cornell
+								</center>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/messages.png);">Story</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:none">
+							<li>
+							<p class="sejarah">
+								Sejak kecil, ia sudah gemar belajar sehingga mampu meraih beasiswa di Universitas Cornell selama empat tahun. Ketekunan dan kerja kerasnya tidak sia-sia. Pada tahun 1906 ia berhasil menemukan alat pendingin udara yang disebut AC (air conditioner)
+								<br /> <br />AC bermanfaat mengatur suhu dan kelembaban udara sebuah ruangan.
+							</p>
+							<center><a href="#" onclick="shareac();" ><img src="sharethis.png"></a></center>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	
+	<div id="detail-atm" class="detail" data-role="page" data-theme="c" data-content-theme="c">
+		<div data-role="header" data-theme="c">
+			<h3>ATM</h3>
+			<a data-icon="arrow-l" data-corners="false" href="#example-list" data-transition="none">Kembali</a>
+		</div>
+		<ul id="expmenu-freebie">
+			<li>
+				<ul class="expmenu">
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/user.png);">Overview</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:block">
+							<li>
+   								<center><img src="penemu/atm-john.jpg" height="120px"></center>
+   								<center><h1>John Shepherd Baron</h1></center>
+   								<center><p>lahir di India, 23 June 1925</p></center>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/campus.png);">Pendidikan</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:none">
+							<li>
+								<center>
+								Stowe School, the University of Edinburgh and Trinity College, Cambridge.
+								</center>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/messages.png);">Story</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:none">
+							<li>
+							<p class="sejarah">
+								Ide membuat ATM muncul, setelah uangnya terkunci di barankas bank. Lalu ia terinspirasi oleh mesin dispenser minuman coklat. Pada tahun 1967 ia berhasil menemukan mesin ATM pertama yang dipasang di cabang Bank Barclay di Enfield, London.
+								<br /> <br />ATM adalah tempat mesin untuk menarik uang di tempat-tempat umum, yang merupakan fasilitas Bank Modern.
+							</p>
+							<center><a href="#" onclick="shareatm();" ><img src="sharethis.png"></a></center>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+
+	<div id="detail-remote" class="detail" data-role="page" data-theme="c" data-content-theme="c">
+		<div data-role="header" data-theme="c">
+			<h3>Remote Control</h3>
+			<a data-icon="arrow-l" data-corners="false" href="#example-list" data-transition="none">Kembali</a>
+		</div>
+		<ul id="expmenu-freebie">
+			<li>
+				<ul class="expmenu">
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/user.png);">Overview</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:block">
+							<li>
+   								<center><img src="penemu/remote-robert.jpg" height="120px"></center>
+   								<center><h1>Robert Adler</h1></center>
+   								<center><p>lahir di Wina, 4 Desember 1913</p></center>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/campus.png);">Pendidikan</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:none">
+							<li>
+								<center>
+								Zenith Electronics
+								</center>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/messages.png);">Story</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:none">
+							<li>
+							<p class="sejarah">
+								Sejak kecil ia dikenal sebagai anak yang cerdas dan suka belajar. Semangat belajarnya yang tinggi itu berbuah manis. Ia berhasil meraih gelar doctor fisika dan University of Vienna pada usia 24 tahun. Tak lama kemudian, ia bekerja di Zenith Electronics Corporation, Amerika Serikat. Dari sinilah ia kemudian menemukan remote control pertama pada tahun 1950 yang diberi nama lazy bones.
+								<br /> <br />Remote Controll digunakan untuk memudahkan mengakses fitur alat-alat elektronik
+							</p>
+							<center><a href="#" onclick="shareremote();" ><img src="sharethis.png"></a></center>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	
+	<div id="detail-cd" class="detail" data-role="page" data-theme="c" data-content-theme="c">
+		<div data-role="header" data-theme="c">
+			<h3>Keping CD</h3>
+			<a data-icon="arrow-l" data-corners="false" href="#example-list" data-transition="none">Kembali</a>
+		</div>
+		<ul id="expmenu-freebie">
+			<li>
+				<ul class="expmenu">
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/user.png);">Overview</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:block">
+							<li>
+   								<center><img src="penemu/cd-james.jpg" height="120px"></center>
+   								<center><h1>James T. Russel</h1></center>
+   								<center><p>lahir di Washington, 1931</p></center>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/campus.png);">Pendidikan</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:none">
+							<li>
+								<center>
+								-
+								</center>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/messages.png);">Story</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:none">
+							<li>
+							<p class="sejarah">
+								Spesialisasi ilmu yang ia pelajari adalah fisika dan ia berhasil lulus dengan baik. Selepas kuliah, ia bekerja di perusahaan General Electric di Richland, Washingtin. Berkat ketekunan dan kerja kerasnya, ia berhasil menemukan CD ppada tahun 1970 yang berguna untuk merekam suara dan menyimpan aneka data.
+								<br /> <br />Compact Disc adalah media penyimpanan berbentuk piringan yang dimanfaatkan banyak khalayak untuk menyimpan data
+							</p>
+							<center><a href="#" onclick="sharecd();" ><img src="sharethis.png"></a></center>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	
+	<div id="detail-komputer" class="detail" data-role="page" data-theme="c" data-content-theme="c">
+		<div data-role="header" data-theme="c">
+			<h3>Komputer</h3>
+			<a data-icon="arrow-l" data-corners="false" href="#example-list" data-transition="none">Kembali</a>
+		</div>
+		<ul id="expmenu-freebie">
+			<li>
+				<ul class="expmenu">
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/user.png);">Overview</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:block">
+							<li>
+   								<center><img src="penemu/comp-howard.jpg" height="120px"></center>
+   								<center><h1>Howard Hathaway Aiken</h1></center>
+   								<center><p>lahir di Washington, 1931</p></center>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/campus.png);">Pendidikan</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:none">
+							<li>
+								<center>
+								Universitas Wisconsin & Universitas Harvard
+								</center>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/messages.png);">Story</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:none">
+							<li>
+							<p class="sejarah">
+								Saat menjadi instrukstur di Departemen fisika Harvard, ia berangan-angan membuat komputer atau mesin hitung. Pada tahun 1947, Aiken menemukan komputer ciptaannya ketika itu sangat besar, tingginya mencapai 24 m, panjang 15,3 m, dan bobotnya mencapai 35 ton. Di dalamnya terdapat 3 juta saklar dan kabel sepanjang 800 km.
+								<br /> <br />Komputer adalah alat yang fenomenal di jaman modern saat ini. Digunakan oleh milyaran orang untuk bekerja dan lain sebagainya.
+							</p>
+							<center><a href="#" onclick="sharecomp();" ><img src="sharethis.png"></a></center>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	
+	<div id="detail-fotocopy" class="detail" data-role="page" data-theme="c" data-content-theme="c">
+		<div data-role="header" data-theme="c">
+			<h3>Fotokopi</h3>
+			<a data-icon="arrow-l" data-corners="false" href="#example-list" data-transition="none">Kembali</a>
+		</div>
+		<ul id="expmenu-freebie">
+			<li>
+				<ul class="expmenu">
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/user.png);">Overview</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:block">
+							<li>
+   								<center><img src="penemu/copy-carlson.jpg" height="120px"></center>
+   								<center><h1>Chester F. Carlson</h1></center>
+   								<center><p>lahir di Washington, 8 Februari 1906</p></center>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/campus.png);">Pendidikan</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:none">
+							<li>
+								<center>
+								Universitas Wisconsin & Universitas Harvard
+								</center>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/messages.png);">Story</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:none">
+							<li>
+							<p class="sejarah">
+								Carlson memiliki pemikiran yang maju dan sifat pantang menyerah. Itulah sebabnya ia tetap bersekolah meski ia harus bekerja paruh waktu. Berkat usahanya itu, ia berhasil lulus dan meraih gelar sarjana fisika dalam waktu dua tahun di Institut Teknologi California. Selepas kuliah, ia bekerja sebagai manajer di Departement Paten di Mallory. Pada tahun 1959, ia berhasil ,menemukan mesin fotokopi pertama di dunia yang diberi nama 914.
+								<br /> <br />Fotokopi digunakan untuk menggandakan dokumen-dokumen.
+							</p>
+							<center><a href="#" onclick="sharecopy();" ><img src="sharethis.png"></a></center>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	
+	<div id="detail-radio" class="detail" data-role="page" data-theme="c" data-content-theme="c">
+		<div data-role="header" data-theme="c">
+			<h3>Radio</h3>
+			<a data-icon="arrow-l" data-corners="false" href="#example-list" data-transition="none">Kembali</a>
+		</div>
+		<ul id="expmenu-freebie">
+			<li>
+				<ul class="expmenu">
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/user.png);">Overview</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:block">
+							<li>
+   								<center><img src="penemu/radio-marconi.jpg" height="120px"></center>
+   								<center><h1>Guglielmo Marconi</h1></center>
+   								<center><p>lahir di Bologna, Italia,  25 April 1874</p></center>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/campus.png);">Pendidikan</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:none">
+							<li>
+								<center>
+								-
+								</center>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/messages.png);">Story</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:none">
+							<li>
+							<p class="sejarah">
+								Marconi banyak membaca percobaan- percobaan yang dilakukan oleh Heinrich Hertz. Pada 1895, ia menemukan sinyal yang bisa melintas jarak yang jauh tanpa melalui kabel. Akhirnya, pada tahun 1896, ia mendapatkan hak patennya atas temuannya itu setelah mempergerakannya di Inggris. Berkat prestasinya, ia mendapat hadia Nobel pada tahun 1909. Radio temuannya pernah berjasa dalam penyelamatan para penumpang kapal S.S Republic.
+								<br /> <br />Sebelum ada televisi dan internet, radio adalah media yang efektif untuk menyampaikan berita. Sekarang pun masih digunakan.
+							</p>
+							<center><a href="#" onclick="shareradio();" ><img src="sharethis.png"></a></center>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	
+	<div id="detail-roket" class="detail" data-role="page" data-theme="c" data-content-theme="c">
+		<div data-role="header" data-theme="c">
+			<h3>Roket</h3>
+			<a data-icon="arrow-l" data-corners="false" href="#example-list" data-transition="none">Kembali</a>
+		</div>
+		<ul id="expmenu-freebie">
+			<li>
+				<ul class="expmenu">
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/user.png);">Overview</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:block">
+							<li>
+   								<center><img src="penemu/roket-goddard.jpg" height="120px"></center>
+   								<center><h1>Robert Goddard</h1></center>
+   								<center><p>lahir di Massachusetts, 5 Oktober 1882</p></center>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/campus.png);">Pendidikan</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:none">
+							<li>
+								<center>
+								-
+								</center>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/messages.png);">Story</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:none">
+							<li>
+							<p class="sejarah">
+								Awal mula ia mendapatkan ide pembuatan roket adalah saat membaca buku Perang Antardunia yang ditulis oleh G. H. Wells. Buku tersebut menginspirasinya untuk membuat alat yang biasa menjelajahi angkasa raya aman dan cepat. Pada tahun 1926, ia berhasil meluncurkan roket pertamanya yang menggunakan bahan bakar bensin.
+								<br /> <br />Roket adalah pesawat terbang yang mempunyai kecepatan luar biasa. Banyak dimanfaatkan untuk keperluan luar angkasa
+							</p>
+							<center><a href="#" onclick="shareroket();" ><img src="sharethis.png"></a></center>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	
+	<div id="detail-lampulalulintas" class="detail" data-role="page" data-theme="c" data-content-theme="c">
+		<div data-role="header" data-theme="c">
+			<h3>Lampu Lalu Lintas</h3>
+			<a data-icon="arrow-l" data-corners="false" href="#example-list" data-transition="none">Kembali</a>
+		</div>
+		<ul id="expmenu-freebie">
+			<li>
+				<ul class="expmenu">
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/user.png);">Overview</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:block">
+							<li>
+   								<center><img src="penemu/lalulintas-garret.jpg" height="120px"></center>
+   								<center><h1>Garret Augustus Morgan</h1></center>
+   								<center><p>lahir di Kentucky, 4 Maret 1877</p></center>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/campus.png);">Pendidikan</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:none">
+							<li>
+								<center>
+								-
+								</center>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/messages.png);">Story</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:none">
+							<li>
+							<p class="sejarah">
+								Morgan kurang lancar dalam menempuh pendidikan. Saat berusia empat belas tahun, ia terpaksa keluar dari sekolahnya. Namun, tekadnya untuk terus belajar dan mencoba sesuatu tidak pernah padam. Pada tahun 1920, ia berhasil menemukan lampu lalu lintas pertama dunia. Lampu lalu lintas itu pertama kali dipasang di Cleveland, Ohio, Amerika Serikat.
+								<br /> <br />Lampu lalu lintas adalah lampu yang berada di jalan. Digunakan untuk mengatur dan menertibkan jalanan, agar tidak terjadi kesemrawutan.
+							</p>
+							<center><a href="#" onclick="sharelintas();" ><img src="sharethis.png"></a></center>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	
+	<div id="detail-tv" class="detail" data-role="page" data-theme="c" data-content-theme="c">
+		<div data-role="header" data-theme="c">
+			<h3>TV</h3>
+			<a data-icon="arrow-l" data-corners="false" href="#example-list" data-transition="none">Kembali</a>
+		</div>
+		<ul id="expmenu-freebie">
+			<li>
+				<ul class="expmenu">
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/user.png);">Overview</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:block">
+							<li>
+   								<center><img src="penemu/tv-johnlogiebaird.jpg" height="120px"></center>
+   								<center><h1>John Logie Baird</h1></center>
+   								<center><p>lahir di Skotlandia, 13 Agustus 1888 </p></center>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/campus.png);">Pendidikan</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:none">
+							<li>
+								<center>
+								Technical College Royal dan Universitas Glasgow
+								</center>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/messages.png);">Story</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:none">
+							<li>
+							<p class="sejarah">
+								Ia memiliki kemampuan yang keras dalam belajar serta kemampuan yang cerdas dalam ilmu-ilmu eksakta (ilmu pasti). Kesukaannya adalah mengutak-atik benda elektronik. Ia pernah memasang jaringan telepon pada kamar teman-temannya. Pada 26 januari 1926, ia berhasil menemukan televise pertama dalam sejarah umat manusia. 
+								<br /> <br />Televisi adalah sebuah media telekomunikasi terkenal yang berfungsi sebagai penerima siaran gambar bergerak beserta suara, baik itu yang monokrom (hitam-putih) maupun berwarna
+							</p>
+							<center><a href="#" onclick="sharetv();" ><img src="sharethis.png"></a></center>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	
+	<div id="detail-bolam" class="detail" data-role="page" data-theme="c" data-content-theme="c">
+		<div data-role="header" data-theme="c">
+			<h3>Bola Lampu</h3>
+			<a data-icon="arrow-l" data-corners="false" href="#example-list" data-transition="none">Kembali</a>
+		</div>
+		<ul id="expmenu-freebie">
+			<li>
+				<ul class="expmenu">
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/user.png);">Overview</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:block">
+							<li>
+   								<center><img src="penemu/thomas-bolam.jpg" height="120px"></center>
+   								<center><h1>Thomas Alva Edison</h1></center>
+   								<center><p>lahir di Milan, Ohio 11 Februari 1847</p></center>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/campus.png);">Pendidikan</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:none">
+							<li>
+								<center>
+								-
+								</center>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/messages.png);">Story</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:none">
+							<li>
+							<p class="sejarah">
+								Ia merupakan salah satu tokoh penemu yang paling berpengaruh sepanjang masa. Ia memiliki hak paten lebih dari 1000 penemuan. Salah satu penemuannya adalah bola lampu pijar. Ia memiliki bakat dan kemauan yang luar biasa untuk menekuni ilmu pengetahuan. Anehnya, pada waktu kecil ia sempat dikeluarkan dari sekolah dasar karena dianggap bodoh oleh gurunya. Namun, ketika dewasa, iaberhasil menjadi sosok jenius yang menciptakan banyak karya. Diantara karyanya adalah <b>Lampu Pijar, 
+								telegraf cetak, pulpen elektrik, proses penambangan magnetik, torpedo listrik, karet sintetis, baterai alkaline, pengaduk semen, mikrofon, transmiter telepon karbon dan proyektor gambar bergerak.
+								</b> 
+								<br /> <br />Dan yang paling terkenal adalah penemuan lampu pijar. Lampu pijar adalah sumber cahaya buatan yang dihasilkan melalui penyaluran arus listrik melalui filamen yang kemudian memanas dan menghasilkan cahaya.
+							</p>
+							<center><a href="#" onclick="sharelampu();" ><img src="sharethis.png"></a></center>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	
+	<div id="detail-kamera" class="detail" data-role="page" data-theme="c" data-content-theme="c">
+		<div data-role="header" data-theme="c">
+			<h3>Kamera</h3>
+			<a data-icon="arrow-l" data-corners="false" href="#example-list" data-transition="none">Kembali</a>
+		</div>
+		<ul id="expmenu-freebie">
+			<li>
+				<ul class="expmenu">
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/user.png);">Overview</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:block">
+							<li>
+   								<center><img src="penemu/kodak-eastman.jpg" height="120px"></center>
+   								<center><h1>George Eastman</h1></center>
+   								<center><p>lahir di Waterville, dekat New York, Amerika Serikat 12 Juli 1854</p></center>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/campus.png);">Pendidikan</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:none">
+							<li>
+								<center>
+								-
+								</center>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/messages.png);">Story</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:none">
+							<li>
+							<p class="sejarah">
+								Ia terlahir dari keluarga miskin. Saat usianya masih sangat muda, ia harus ikut memilkul tanggungjawab menghidupi ekonomi keluarga. Awalnya, ia bekerja sebagai kurir di sebuah perusahaan asuransi, lalu menjadi pegawai arsip. Berkat ketekunan dan kerja kerasnya pada juni 1888, ia berhasil menemukan kamera yang diberi nama “Kodak”, saat ini Kodak menjadi merek terkenal di dunia.
+								</b> 
+								<br /> <br />Kamera adalah alat yang dipakai untuk merekam gambar suatu objek yang kemudian dikatakan foto sebagai hasil akhirnya
+							</p>
+							<center><a href="#" onclick="sharekodak();" ><img src="sharethis.png"></a></center>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	
+	<div id="detail-diesel" class="detail" data-role="page" data-theme="c" data-content-theme="c">
+		<div data-role="header" data-theme="c">
+			<h3>Diesel</h3>
+			<a data-icon="arrow-l" data-corners="false" href="#example-list" data-transition="none">Kembali</a>
+		</div>
+		<ul id="expmenu-freebie">
+			<li>
+				<ul class="expmenu">
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/user.png);">Overview</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:block">
+							<li>
+   								<center><img src="penemu/diesel-rudolf.jpg" height="120px"></center>
+   								<center><h1>Rudolf Diesel</h1></center>
+   								<center><p>lahir di Paris, 18 Maret 1858</p></center>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/campus.png);">Pendidikan</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:none">
+							<li>
+								<center>
+								Gewerbsschul, Universitas Teknik (Institut Politeknik) Muenchen.
+								</center>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/messages.png);">Story</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:none">
+							<li>
+							<p class="sejarah">
+								Sejak kecil ia dikenal sebagi anak yang jenius. Ia bersekolah di Gewerbwschule sebagai salah satu lulusan terbaik. Kejeniusannya memuncak pada 1893 dimana ia berhasil menemukan mesin diesel pertama di dunia. Semua itu tidak lepas dari kecerdasannya yang di atas rata-rata dan kemauannya yang luar biasa keras dalam menekuni ilmu pengetahuan. 
+								<br /> <br />Mesin diesel adalah sejenis mesin pembakaran dalam; lebih spesifik lagi, sebuah mesin pemicu kompresi, dimana bahan bakar dinyalakan oleh suhu tinggi gas yang dikompresi, dan bukan oleh alat berenergi lain (seperti busi).
+								</p>
+							<center><a href="#" onclick="sharediesel();" ><img src="sharethis.png"></a></center>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	
+	<div id="detail-helikopter" class="detail" data-role="page" data-theme="c" data-content-theme="c">
+		<div data-role="header" data-theme="c">
+			<h3>Helikopter</h3>
+			<a data-icon="arrow-l" data-corners="false" href="#example-list" data-transition="none">Kembali</a>
+		</div>
+		<ul id="expmenu-freebie">
+			<li>
+				<ul class="expmenu">
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/user.png);">Overview</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:block">
+							<li>
+   								<center><img src="penemu/helikopter-bahyl.jpg" height="120px"></center>
+   								<center><h1>Jan Bahyl</h1></center>
+   								<center><p>lahir di Zvolenska Slatina, Kerajaan Hongaria, 25 Mei 1856</p></center>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/campus.png);">Pendidikan</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:none">
+							<li>
+								<center>
+								Akademik Pertambangan Banska Stiavnica & Akademik Militer Wina
+								</center>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/messages.png);">Story</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:none">
+							<li>
+							<p class="sejarah">
+								Ia mengeyam pendidikan di akademik Pertambangan Banska Stivnica dengan mengambil konsentrasi teknik. Setelah lulus dari sekolah tersebut ia bergabung dengan tentara Hoangaria dan menjadi staf teknik. Tak lama kemudian ia ditugaskan untuk belajar di Akademik Militer Wina dan lulus tahun 1987. Pada tahun 1895, ia berhasil mendapatkan hak paten sebagai penemu helicopter pertama di dunia.
+								<br /> <br />Helikopter adalah adalah pesawat udara yang lebih berat dari udara, bersayap putar yang rotornya digerakkan oleh mesin.
+							</p>
+							<center><a href="#" onclick="shareheli();" ><img src="sharethis.png"></a></center>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	
+	<div id="detail-kalkulator" class="detail" data-role="page" data-theme="c" data-content-theme="c">
+		<div data-role="header" data-theme="c">
+			<h3>Kalkulator</h3>
+			<a data-icon="arrow-l" data-corners="false" href="#example-list" data-transition="none">Kembali</a>
+		</div>
+		<ul id="expmenu-freebie">
+			<li>
+				<ul class="expmenu">
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/user.png);">Overview</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:block">
+							<li>
+   								<center><img src="penemu/kalkulator-pascal.jpg" height="120px"></center>
+   								<center><h1>Blaise Pascal</h1></center>
+   								<center><p>lahir di Clermon, Ferrand, Perancis, 19 Juni 1923</p></center>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/campus.png);">Pendidikan</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:none">
+							<li>
+								<center>
+								-
+								</center>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/messages.png);">Story</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:none">
+							<li>
+							<p class="sejarah">
+								Sejak  kecil, paskal menaruh minat yang besar terhadap bidang filsafat, sains, dan agama. Pada usia yang remaja, yakni 12 tahun, Pascal menemukan alat mesin hitung yang ia pergunakan untuk membantu pekerjaan ayahnya yang berprofesi sebagai pegawai pajak. Selain itu, ia juga menemukan prinsip kerja barometer dan sistem kerja arloji yang bermanfaat bagi dunia sains.
+							</p>
+							<center><a href="#" onclick="sharecalc();" ><img src="sharethis.png"></a></center>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	
+	<div id="detail-pesawat" class="detail" data-role="page" data-theme="c" data-content-theme="c">
+		<div data-role="header" data-theme="c">
+			<h3>Pesawat</h3>
+			<a data-icon="arrow-l" data-corners="false" href="#example-list" data-transition="none">Kembali</a>
+		</div>
+		<ul id="expmenu-freebie">
+			<li>
+				<ul class="expmenu">
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/user.png);">Overview</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:block">
+							<li>
+   								<center><img src="penemu/pesawat-wilburg.jpg" height="120px"></center>
+   								<center><h1>Wilbur Wright & Orville Wright</h1></center>
+   								<center><p><i>Overille Wright </i> lahir pada 19 Agustus 1871, Dayton, Ohio, Amerika Serikat. <br />
+								<i>Wilbur Wright </i> lahir pada 16 April 1867, Milville, Indiana, Amerika Serikat.</p></center>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/campus.png);">Pendidikan</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:none">
+							<li>
+								<center>
+								-
+								</center>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/messages.png);">Story</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:none">
+							<li>
+							<p class="sejarah">
+								Kakak beradik ini pada mulanya mengelola toko sepeda motor di Dayton, Ohio, Amerika Serikat. Berawal dari situ, keduanya  kemudian mempelajari masalah penerbangan. Alhasil, pada 17 Desember 1903, mereka berhasil menerbangkan pesawat di bukit pasir Kitty Hawk, North Carolina
+							</p>
+							<center><a href="#" onclick="sharepesawat();" ><img src="sharethis.png"></a></center>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	
+	<div id="detail-telepon" class="detail" data-role="page" data-theme="c" data-content-theme="c">
+		<div data-role="header" data-theme="c">
+			<h3>Telepon</h3>
+			<a data-icon="arrow-l" data-corners="false" href="#example-list" data-transition="none">Kembali</a>
+		</div>
+		<ul id="expmenu-freebie">
+			<li>
+				<ul class="expmenu">
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/user.png);">Overview</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:block">
+							<li>
+   								<center><img src="penemu/telepon-bell.jpg" height="120px"></center>
+   								<center><h1>Alexander Graham Bell</h1></center>
+   								<center><p>lahir di Edinburgh, Skotlandia, Britania Raya, 3 Maret 1847</p></center>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/campus.png);">Pendidikan</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:none">
+							<li>
+								<center>
+								University of Edinburgh
+								</center>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/messages.png);">Story</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:none">
+							<li>
+							<p class="sejarah">
+								Selain belajar formal di University of Edinburgh, ia juga belajar secara langsung lewat ayahnya yang ahli dalam hal fifiologi vokal, memeperbaiki cara berpidato, dan mengajar orang-orang tuli. Graham Bell berhasil menemukan telepon pada tahun 1875. Karyanya itu ia patenkan pada Februari 1876. Selain aktif berkarya dalam bidang teknologi komunikasi, ia juga banyak menyumbangkan kemajuan penting dalam bidang teknologi penerbangan.
+							</p>
+							<center><a href="#" onclick="sharetelp();" ><img src="sharethis.png"></a></center>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	
+	<div id="detail-traktor" class="detail" data-role="page" data-theme="c" data-content-theme="c">
+		<div data-role="header" data-theme="c">
+			<h3>Traktor</h3>
+			<a data-icon="arrow-l" data-corners="false" href="#example-list" data-transition="none">Kembali</a>
+		</div>
+		<ul id="expmenu-freebie">
+			<li>
+				<ul class="expmenu">
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/user.png);">Overview</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:block">
+							<li>
+   								<center><img src="penemu/traktor-froelich.jpg" height="120px"></center>
+   								<center><h1>John Froelich</h1></center>
+   								<center><p>lahir di Iowa, 24 November 1849</p></center>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/campus.png);">Pendidikan</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:none">
+							<li>
+								<center>
+								-
+								</center>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/messages.png);">Story</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:none">
+							<li>
+							<p class="sejarah">
+								Sejak kecil ia tergolong anak yang cerdas. Pada tahun 1892, ia berhasil menemukan traktor mesin yang memiliki kekuatan setara dengan enam belas tenaga kuda. Selama hidupnya, ia pernah mendirikan perusahaan bernama Waterloo Gasoline Traction Engine Company. Namun sayang, traktor produksi perusahaan tersebut ketika itu belum bisa diterima oleh masyarakat. Mesti demikian, pada tahun 1991, ia dianugerahi gelar sebagai penemu traktor.
+							</p>
+							<center><a href="#" onclick="sharetraktor();" ><img src="sharethis.png"></a></center>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	
+	<div id="detail-xray" class="detail" data-role="page" data-theme="c" data-content-theme="c">
+		<div data-role="header" data-theme="c">
+			<h3>Sinar X-Ray</h3>
+			<a data-icon="arrow-l" data-corners="false" href="#example-list" data-transition="none">Kembali</a>
+		</div>
+		<ul id="expmenu-freebie">
+			<li>
+				<ul class="expmenu">
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/user.png);">Overview</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:block">
+							<li>
+   								<center><img src="penemu/xray-wilhelm.jpg" height="120px"></center>
+   								<center><h1>Wilhelm Conrad Rontgen</h1></center>
+   								<center><p>lahir di Lennep, Jerman, 1845</p></center>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/campus.png);">Pendidikan</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:none">
+							<li>
+								<center>
+								University of Edinburgh
+								</center>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div class="header">
+							<span class="label" style="background-image: url(exp/messages.png);">Story</span>
+							<span class="arrow up"></span>
+						</div>
+						<ul class="menu" style="display:none">
+							<li>
+							<p class="sejarah">
+								Pada tahun 1888, ia diangkat menjadi guru besat bidang fisika sekaliguus direktur lembaga fisika di Universitas Wurzburg, Jerman. Kejeniusannya memuncak pada tahun 1895 dimana ia berhasil menemukan Sinar X yang kelak sangat bermanfaat bagi dunia kedokteran. Atas jasanya tersebut ia mendapat hadia Nobel Fisika pada tahun 1901
+							</p>
+							<center><a href="#" onclick="sharexray();" ><img src="sharethis.png"></a></center>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	
+	<!-- <script type="text/javascript">
+		var options = {
+    		valueNames: [ 'feature', 'description' ]
+		};
+
+			var featureList = new List('example-list', options);
+	</script> -->
+  </body>
+</html>
